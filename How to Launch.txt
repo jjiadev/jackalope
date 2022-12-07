@@ -1,0 +1,5 @@
+1. Using the cmd line runner, navigate to wherever the Jackalope.jar lives.
+2. run the Jackalope.jar like so
+	* java -jar Jackalope.jar [0][1]
+	*[0] = output path + output file name
+	*[1] = input files folder path

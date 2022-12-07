@@ -1,0 +1,48 @@
+package com.parsing;
+
+import java.text.ParseException;
+import java.util.GregorianCalendar;
+
+import junit.framework.TestCase;
+
+import com.people.Gender;
+import com.utilities.TestHelper;
+
+public class ParseHelperTest extends TestCase {
+
+	public void testParseSingleLetterGender() throws Exception {
+		assertEquals(Gender.Male, ParseHelper.parseSingleLetterGender("m"));
+		assertEquals(Gender.Male, ParseHelper.parseSingleLetterGender("M"));
+		assertEquals(Gender.Female, ParseHelper.parseSingleLetterGender("F"));
+		assertEquals(Gender.Female, ParseHelper.parseSingleLetterGender("f"));
+		assertEquals(Gender.Undetermined,
+				ParseHelper.parseSingleLetterGender("x"));
+		assertEquals(Gender.Undetermined,
+				ParseHelper.parseSingleLetterGender("t"));
+		assertEquals(Gender.Undetermined,
+				ParseHelper.parseSingleLetterGender("56t"));
+
+	}
+
+	public void testParseDate() throws Exception {
+		GregorianCalendar actualBirthDate = ParseHelper.parseDate(
+				"11/23/2033", "MM/dd/yyyy");
+		TestHelper.checkDateDownToTheDay(new GregorianCalendar(2033, 10, 23),
+				actualBirthDate);
+		GregorianCalendar actualBirthDate2 = ParseHelper.parseDate(
+				"2255-01-14", "yyyy-MM-dd");
+		TestHelper.checkDateDownToTheDay(new GregorianCalendar(2255, 0, 14),
+				actualBirthDate2);
+	}
+
+	public void testParseDateThrowsParseExceptionWithImproperFormat()
+			throws Exception {
+		try {
+			ParseHelper.parseDate("11/23/2033", "yyyy-mm-dd");
+			fail("should have thrown the exception instead of swallowing it");
+
+		} catch (ParseException e) {
+
+		}
+	}
+}

@@ -7,8 +7,9 @@ import org.junit.Test;
 import com.utilities.TestHelper;
 
 import junit.framework.TestCase;
+import static junit.framework.TestCase.*;
 
-public class NullPersonTest extends TestCase {
+public class NullPersonTest {
 
 	@Test
 	public void testImplementsInterface() throws Exception {

@@ -3,13 +3,17 @@ package com.people;
 import java.util.GregorianCalendar;
 
 import junit.framework.TestCase;
+import org.junit.Test;
 
-public class PersonFormatterTest extends TestCase {
+import static junit.framework.TestCase.*;
+
+public class PersonFormatterTest {
 
 	public void testImplementsInterface() throws Exception {
 		assertEquals(PersonFormatterInterface.class,
 				PersonFormatter.class.getInterfaces()[0]);
 	}
+	@Test
 
 	public void testFormatPerson() throws Exception {
 		Person person = new Person("Slamchest", "Crunch",
@@ -21,6 +25,7 @@ public class PersonFormatterTest extends TestCase {
 				personFormatter.getFormattedPersonString(person));
 
 	}
+	@Test
 
 	public void testFormatPerson_Female() throws Exception {
 		Person person = new Person("McRunfast", "Thick",
@@ -32,6 +37,7 @@ public class PersonFormatterTest extends TestCase {
 				personFormatter.getFormattedPersonString(person));
 
 	}
+	@Test
 
 	public void testFormatPerson_Undetermined() throws Exception {
 		Person person = new Person("Thickneck", "Blast",

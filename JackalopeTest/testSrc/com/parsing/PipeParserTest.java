@@ -9,13 +9,12 @@ import com.people.NullPerson;
 import com.people.Person;
 import com.people.PersonInterface;
 import com.utilities.TestHelper;
+import org.junit.Test;
+import static junit.framework.TestCase.*;
 
-public class PipeParserTest extends TestCase {
+public class PipeParserTest  {
 
-	public void testImplementsParserInterface() throws Exception {
-		assertEquals(PersonParser.class, PipeParser.class.getInterfaces()[0]);
-	}
-
+	@Test
 	public void testParsePipeRow_Male() throws Exception {
 		String input = "Baker | Tom | S | M | Green | 1-20-1934";
 		PersonParser pipeParser = new PipeParser();
@@ -34,6 +33,7 @@ public class PipeParserTest extends TestCase {
 
 	}
 
+	@Test
 	public void testParsePipeRow_Male_DifferentGenderCasing() throws Exception {
 		String input = "Baker | Tom | S | m | Green | 1-20-1934";
 		PersonParser pipeParser = new PipeParser();
@@ -43,6 +43,7 @@ public class PipeParserTest extends TestCase {
 
 	}
 
+	@Test
 	public void testParsePipeRow_Female() throws Exception {
 		String input = "Sladen | Elisabeth | C | F | Blue | 2-1-1946";
 		PersonParser pipeParser = new PipeParser();
@@ -61,6 +62,7 @@ public class PipeParserTest extends TestCase {
 
 	}
 
+	@Test
 	public void testParsePipeRow_Female_DifferentGenderCasing()
 			throws Exception {
 		String input = "Sladen | Elisabeth | C | f | Blue | 2-1-1946";
@@ -71,6 +73,7 @@ public class PipeParserTest extends TestCase {
 
 	}
 
+	@Test
 	public void testParsePipeRow_IndeterminateGender() throws Exception {
 		String input = "Zorakerson | Zorak | D | X | Red | 3-24-4512";
 		PersonParser pipeParser = new PipeParser();
@@ -88,6 +91,7 @@ public class PipeParserTest extends TestCase {
 				person.getDateOfBirth());
 	}
 
+	@Test
 	public void testWrongNumberOfPipes() throws Exception {
 		String inputNotEnoughPipes = "Zorakerson | Zorak | D | X | Red";
 		String inputNotTooManyPipes = "Zorakerson | Zorak | D | X | Red|3-24-4512|3-24-4512|23423|";
@@ -98,6 +102,7 @@ public class PipeParserTest extends TestCase {
 				pipeParser.parsePerson(inputNotTooManyPipes));
 	}
 
+	@Test
 	public void testBadDates() throws Exception {
 		String inputNotADate = "Zorakerson | Zorak | D | X | Red | imaword";
 		String inputBlankDate = "Zorakerson | Zorak | D | X | Red | ";

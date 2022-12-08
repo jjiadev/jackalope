@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 import junit.framework.TestCase;
+import org.junit.Test;
 
-public class BirthdateSorterTest extends TestCase {
-	public void testImplementsPeopleSorter() throws Exception {
-		assertEquals(PersonSorter.class,
-				BirthdateSorter.class.getInterfaces()[0]);
-	}
+import static junit.framework.TestCase.assertEquals;
 
+public class BirthdateSorterTest {
+
+	@Test
 	public void testSort() throws Exception {
 		BirthdateSorter birthdateSorter = new BirthdateSorter();
 		ArrayList<PersonInterface> people = new ArrayList<PersonInterface>();
@@ -34,6 +34,7 @@ public class BirthdateSorterTest extends TestCase {
 		assertEquals(mockPerson1, people.get(3));
 	}
 
+	@Test
 	public void testSortWillPutFemaleAfterMaleWithTheSameDate()
 			throws Exception {
 		BirthdateSorter birthdateSorter = new BirthdateSorter();

@@ -5,13 +5,9 @@ import java.util.GregorianCalendar;
 import org.junit.Test;
 
 import junit.framework.TestCase;
+import static junit.framework.TestCase.*;
 
-public class PersonTest extends TestCase {
-
-	@Test
-	public void testImplementsInterface() throws Exception {
-		assertEquals(PersonInterface.class, Person.class.getInterfaces()[0]);
-	}
+public class PersonTest {
 
 	@Test
 	public void testConstructor() throws Exception {

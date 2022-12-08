@@ -9,13 +9,13 @@ import com.people.NullPerson;
 import com.people.Person;
 import com.people.PersonInterface;
 import com.utilities.TestHelper;
+import org.junit.Test;
 
-public class CommaParserTest extends TestCase {
+import static junit.framework.TestCase.*;
 
-	public void testImplementsParserInterface() throws Exception {
-		assertEquals(PersonParser.class, CommaParser.class.getInterfaces()[0]);
-	}
+public class CommaParserTest {
 
+	@Test
 	public void testParseCommaRow_Male() throws Exception {
 		String input = "Shabadoo , Joeyjojo , Male , Yellow, 5/15/1994";
 		PersonParser commaParser = new CommaParser();
@@ -32,7 +32,7 @@ public class CommaParserTest extends TestCase {
 		TestHelper.checkDateDownToTheDay(expectedDateOfBirth,
 				dude.getDateOfBirth());
 	}
-
+	@Test
 	public void testParseCommaRow_Male_DifferentCapitalization()
 			throws Exception {
 		String input = "Shabadoo , Joeyjojo , male , Yellow, 5/15/1994";
@@ -47,7 +47,7 @@ public class CommaParserTest extends TestCase {
 		assertEquals(Gender.Male, dude3.getGender());
 
 	}
-
+	@Test
 	public void testParseCommaRow_Female() throws Exception {
 		String input = "McLadyson , Girly, Female , Mauve, 7/22/1983";
 		PersonParser commaParser = new CommaParser();
@@ -65,7 +65,7 @@ public class CommaParserTest extends TestCase {
 				person.getDateOfBirth());
 
 	}
-
+	@Test
 	public void testParseCommaRow_Female_DifferentCapitalization()
 			throws Exception {
 		String input = "Shabadoo , Joeyjojo , female , Yellow, 5/15/1994";
@@ -80,7 +80,7 @@ public class CommaParserTest extends TestCase {
 		assertEquals(Gender.Female, lady3.getGender());
 
 	}
-
+	@Test
 	public void testParseCommaRow_IndeterminateGender() throws Exception {
 		String input = "Hardcheese, Blast ,  Nope , Red , 11/23/2012";
 		PersonParser commaParser = new CommaParser();
@@ -97,7 +97,7 @@ public class CommaParserTest extends TestCase {
 		TestHelper.checkDateDownToTheDay(expectedDateOfBirth,
 				person.getDateOfBirth());
 	}
-
+	@Test
 	public void testWrongNumberOfCommas() throws Exception {
 		String inputNotEnoughCommas = "Bibity , Blabity , X  Red";
 		String inputTooManyCommas = "Bibity , Blabity , Male,  Red, 2/12/1235, 412541,12412,gvsd, more stuff";
@@ -107,7 +107,7 @@ public class CommaParserTest extends TestCase {
 		assertEquals(NullPerson.NULL,
 				commaParser.parsePerson(inputTooManyCommas));
 	}
-
+	@Test
 	public void testBadDates() throws Exception {
 		String inputNotADate = "Bibity , Blabity , Male,  Red, notadate";
 		String inputBlankDate = "Bibity , Blabity , Male,  Red, ";

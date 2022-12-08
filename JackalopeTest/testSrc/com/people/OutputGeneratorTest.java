@@ -3,20 +3,26 @@ package com.people;
 import java.util.ArrayList;
 
 import junit.framework.TestCase;
+import org.junit.Test;
 
-public class OutputGeneratorTest extends TestCase {
+import static junit.framework.TestCase.*;
 
+public class OutputGeneratorTest {
+
+	@Test
 	public void testImplementsInterface() throws Exception {
 		assertEquals(OutputGeneratorInterface.class,
 				OutputGenerator.class.getInterfaces()[0]);
 	}
 
+	@Test
 	public void testConstructor() throws Exception {
 		MockPersonFormatter personFormatter = new MockPersonFormatter();
 		OutputGenerator outputGenerator = new OutputGenerator(personFormatter);
 		assertEquals(personFormatter, outputGenerator.getPersonFormatter());
 	}
 
+	@Test
 	public void testGenerateOutput() throws Exception {
 		MockPersonFormatter personFormatter = new MockPersonFormatter();
 		MockPersonSorter mockPersonSorter = new MockPersonSorter();
@@ -56,6 +62,7 @@ public class OutputGeneratorTest extends TestCase {
 
 	}
 
+	@Test
 	public void testGenerateOutput_AnotherCase() throws Exception {
 		MockPersonFormatter personFormatter = new MockPersonFormatter();
 		MockPersonSorter mockPersonSorter = new MockPersonSorter();

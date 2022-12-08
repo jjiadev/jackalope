@@ -9,17 +9,11 @@ import com.people.PersonInterface;
 import com.utilities.TestHelper;
 
 import junit.framework.TestCase;
+import org.junit.Test;
+import static junit.framework.TestCase.*;
 
-public class SpaceParserTest extends TestCase {
-
-	public void testImplementsParser() throws Exception {
-		assertEquals(PersonParser.class, SpaceParser.class.getInterfaces()[0]);
-	}
-
-	public void testImplementsParserInterface() throws Exception {
-		assertEquals(PersonParser.class, PipeParser.class.getInterfaces()[0]);
-	}
-
+public class SpaceParserTest {
+@Test
 	public void testParsePipeRow_Male() throws Exception {
 		String input = "Bulkhead Slab T M 1-12-5123 Green";
 		PersonParser parser = new SpaceParser();
@@ -37,7 +31,7 @@ public class SpaceParserTest extends TestCase {
 				timeLord.getDateOfBirth());
 
 	}
-
+	@Test
 	public void testParsePipeRow_Female() throws Exception {
 		String input = "MclargeHuge Big C F 12-21-2946 Blue";
 		PersonParser parser = new SpaceParser();
@@ -55,7 +49,7 @@ public class SpaceParserTest extends TestCase {
 				companion.getDateOfBirth());
 
 	}
-
+	@Test
 	public void testParsePipeRow_Male_differentGenderCasing() throws Exception {
 		String input = "Bulkhead Slab T m 1-12-5123 Green";
 		PersonParser parser = new SpaceParser();
@@ -73,7 +67,7 @@ public class SpaceParserTest extends TestCase {
 				timeLord.getDateOfBirth());
 
 	}
-
+	@Test
 	public void testParsePipeRow_Female_DifferentGenderCasing()
 			throws Exception {
 		String input = "MclargeHuge Big C f 12-21-2946 Blue";
@@ -92,7 +86,7 @@ public class SpaceParserTest extends TestCase {
 				companion.getDateOfBirth());
 
 	}
-
+	@Test
 	public void testParsePipeRow_IndeterminateGender() throws Exception {
 		String input = "PunchBeef Beat D X 8-22-1242 Red";
 		PersonParser parser = new SpaceParser();
@@ -109,7 +103,7 @@ public class SpaceParserTest extends TestCase {
 		TestHelper.checkDateDownToTheDay(expectedDateOfBirth,
 				person.getDateOfBirth());
 	}
-
+	@Test
 	public void testWrongNumberOfSpaces() throws Exception {
 		String inputNotEnoughPipes = "BoneMeal Crud D X 3-24-4512";
 		String inputNotTooManyPipes = "Deadlift Butch D X 3-24-4512 Red  23423 MoreStuff and more";
@@ -117,7 +111,7 @@ public class SpaceParserTest extends TestCase {
 		assertEquals(NullPerson.NULL, parser.parsePerson(inputNotEnoughPipes));
 		assertEquals(NullPerson.NULL, parser.parsePerson(inputNotTooManyPipes));
 	}
-
+	@Test
 	public void testBadDates() throws Exception {
 		String inputNotADate = "Bulkhead Slab T m impretendingtobeadate Green";
 		String inputBlankDate = "Bulkhead Slab T m  Green";

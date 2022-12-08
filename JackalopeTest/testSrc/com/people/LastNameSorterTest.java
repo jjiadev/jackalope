@@ -3,13 +3,11 @@ package com.people;
 import java.util.ArrayList;
 
 import junit.framework.TestCase;
+import org.junit.Test;
+import static junit.framework.TestCase.*;
 
-public class LastNameSorterTest extends TestCase {
-
-	public void testImplementsInterface() throws Exception {
-		assertEquals(PersonSorter.class,
-				LastNameSorter.class.getInterfaces()[0]);
-	}
+public class LastNameSorterTest {
+	@Test
 
 	public void testSortsByLastNameDescending_ZtoA() throws Exception {
 		LastNameSorter sorter = new LastNameSorter();

@@ -3,14 +3,12 @@ package com.people;
 import java.util.ArrayList;
 
 import junit.framework.TestCase;
+import org.junit.Test;
+import static junit.framework.TestCase.*;
 
-public class GenderAndLastNameSorterTest extends TestCase {
+public class GenderAndLastNameSorterTest {
 
-	public void testImplementsInterface() throws Exception {
-		assertEquals(PersonSorter.class,
-				GenderAndLastNameSorter.class.getInterfaces()[0]);
-	}
-
+	@Test
 	public void testSort() throws Exception {
 		GenderAndLastNameSorter sorter = new GenderAndLastNameSorter();
 		ArrayList<PersonInterface> people = new ArrayList<PersonInterface>();

@@ -12,15 +12,18 @@ import com.people.MockPerson;
 import com.people.NullPerson;
 import com.people.PersonInterface;
 import com.utilities.TestHelper;
+import org.junit.Test;
+import static junit.framework.TestCase.*;
 
-public class PersonLoaderTest extends TestCase {
-
+public class PersonLoaderTest {
+	@Test
 	public void testConstructorArgs() throws Exception {
 		MockFileReader mockFileReader = new MockFileReader();
 		PersonLoader personLoader = new PersonLoader(mockFileReader);
 		assertEquals(mockFileReader, personLoader.getFileReader());
 	}
 
+	@Test
 	public void testLoadPeople() throws Exception {
 		MockPersonParser mockPersonParser = new MockPersonParser();
 		MockFileReader mockFileReader = new MockFileReader();

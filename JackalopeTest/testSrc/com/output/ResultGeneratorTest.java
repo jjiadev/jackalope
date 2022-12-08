@@ -20,10 +20,13 @@ import com.people.PersonFormatter;
 import com.people.PersonInterface;
 import com.utilities.TestHelper;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class ResultGeneratorTest extends TestCase {
+import static junit.framework.TestCase.*;
 
+public class ResultGeneratorTest {
+
+	@Test
 	public void testConstructor() throws Exception {
 		MockOutputGenerator outputGenerator = new MockOutputGenerator();
 		MockFileWriter fileWriter = new MockFileWriter();
@@ -34,7 +37,7 @@ public class ResultGeneratorTest extends TestCase {
 		assertEquals(fileWriter, resultGenerator.getFileWriter());
 		assertEquals(personCompiler, resultGenerator.getPersonCompiler());
 	}
-
+	@Test
 	public void testPassesCorrectArgumentsToGenerateOutput() throws Exception {
 		MockOutputGenerator outputGenerator = new MockOutputGenerator();
 		MockFileWriter fileWriter = new MockFileWriter();
@@ -72,7 +75,7 @@ public class ResultGeneratorTest extends TestCase {
 				outputGeneratorArgs3.getPersonSorter());
 
 	}
-
+	@Test
 	public void testConcatsOutputAndSendsToFileWriter() throws Exception {
 		MockOutputGenerator outputGenerator = new MockOutputGenerator();
 		MockFileWriter fileWriter = new MockFileWriter();
@@ -93,7 +96,7 @@ public class ResultGeneratorTest extends TestCase {
 				fileWriter.getFileContentsWritten());
 		assertEquals(path, fileWriter.getPathWrittenTo());
 	}
-
+	@Test
 	public void testIntegrationTest() throws Exception {
 		ResultGenerator resultGenerator = new ResultGenerator(
 				new OutputGenerator(new PersonFormatter()), new FileWriter(),

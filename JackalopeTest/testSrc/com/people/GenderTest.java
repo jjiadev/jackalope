@@ -1,9 +1,11 @@
 package com.people;
 
-import junit.framework.TestCase;
+import org.junit.Test;
+import static junit.framework.TestCase.*;
 
-public class GenderTest extends TestCase {
+public class GenderTest {
 
+	@Test
 	public void testCompare() throws Exception {
 
 		assertEquals(-1, Gender.Female.compareTo(Gender.Male));

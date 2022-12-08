@@ -12,11 +12,6 @@ import static junit.framework.TestCase.*;
 public class NullPersonTest {
 
 	@Test
-	public void testImplementsInterface() throws Exception {
-		assertEquals(PersonInterface.class, NullPerson.class.getInterfaces()[0]);
-	}
-
-	@Test
 	public void testSingleton() throws Exception {
 		assertEquals(0, NullPerson.class.getConstructors().length);
 		assertEquals(NullPerson.class, NullPerson.NULL.getClass());

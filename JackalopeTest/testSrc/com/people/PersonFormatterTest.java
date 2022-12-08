@@ -8,11 +8,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.*;
 
 public class PersonFormatterTest {
-
-	public void testImplementsInterface() throws Exception {
-		assertEquals(PersonFormatterInterface.class,
-				PersonFormatter.class.getInterfaces()[0]);
-	}
+	
 	@Test
 
 	public void testFormatPerson() throws Exception {

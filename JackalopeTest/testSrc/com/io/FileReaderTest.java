@@ -16,12 +16,6 @@ import static junit.framework.TestCase.assertFalse;
 public class FileReaderTest {
 
     @Test
-    public void testImplementsInterface() throws Exception {
-        assertEquals(FileReaderInterface.class,
-                FileReader.class.getInterfaces()[0]);
-    }
-
-    @Test
     public void testReadsFileContents() throws Exception {
         FileReaderInterface fileReader = new FileReader();
         File file = new File("stuff.stuff");

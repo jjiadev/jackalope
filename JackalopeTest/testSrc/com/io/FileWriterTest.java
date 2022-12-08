@@ -31,9 +31,4 @@ public class FileWriterTest {
             assertFalse(file.exists());
         }
     }
-    @Test
-    public void testImplementsInterface() throws Exception {
-        assertEquals(FileWriterInterface.class,
-                FileWriter.class.getInterfaces()[0]);
-    }
 }

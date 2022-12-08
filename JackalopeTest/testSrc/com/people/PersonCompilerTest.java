@@ -17,11 +17,6 @@ import static junit.framework.TestCase.*;
 public class PersonCompilerTest {
 
 	@Test
-	public void testImplementsInterface() throws Exception {
-		assertEquals(PersonCompilerInterface.class,
-				PersonCompiler.class.getInterfaces()[0]);
-	}
-	@Test
 	public void testConstructor() throws Exception {
 		MockPeopleLoader peopleLoader = new MockPeopleLoader();
 		PersonCompiler personCompiler = new PersonCompiler(peopleLoader);

@@ -103,13 +103,13 @@ public class ResultGeneratorTest {
 				new PersonCompiler(new PersonLoader(new FileReader())));
 
 		String path = "here.txt";
-		resultGenerator.writeOutput(path, "../Jackalope/resources/input_files");
+		resultGenerator.writeOutput(path, "./Jackalope/resources/input_files");
 		FileInputStream inputStream = new FileInputStream(new File(path));
 		byte[] outputFileBytes = new byte[inputStream.available()];
 		inputStream.read(outputFileBytes);
 		inputStream.close();
 
-		String expectedPath = "../Jackalope/resources/model_output.txt";
+		String expectedPath = "./Jackalope/resources/model_output.txt";
 		File expectedFile = new File(expectedPath);
 		FileInputStream expectedInputStream = new FileInputStream(expectedFile);
 		byte[] expectedBytes = new byte[expectedInputStream.available()];

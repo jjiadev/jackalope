@@ -2,8 +2,6 @@ package com.parsing;
 
 import java.util.GregorianCalendar;
 
-import junit.framework.TestCase;
-
 import com.people.Gender;
 import com.people.NullPerson;
 import com.people.Person;
@@ -82,7 +80,7 @@ public class PipeParserTest  {
 		assertEquals("Zorakerson", person.getLastName());
 		assertEquals("Zorak", person.getFirstName());
 		assertEquals("D", person.getMiddleInitial());
-		assertEquals(Gender.Undetermined, person.getGender());
+		assertEquals(Gender.NonBinary, person.getGender());
 		assertEquals("Red", person.getFavoriteColor());
 		int marchInJava = 2;
 		GregorianCalendar expectedDateOfBirth = new GregorianCalendar(4512,

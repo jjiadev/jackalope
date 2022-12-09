@@ -3,8 +3,6 @@ package com.parsing;
 import java.text.ParseException;
 import java.util.GregorianCalendar;
 
-import junit.framework.TestCase;
-
 import com.people.Gender;
 import com.utilities.TestHelper;
 import org.junit.Test;
@@ -17,11 +15,11 @@ public class ParseHelperTest {
         assertEquals(Gender.Male, ParseHelper.parseSingleLetterGender("M"));
         assertEquals(Gender.Female, ParseHelper.parseSingleLetterGender("F"));
         assertEquals(Gender.Female, ParseHelper.parseSingleLetterGender("f"));
-        assertEquals(Gender.Undetermined,
+        assertEquals(Gender.NonBinary,
                 ParseHelper.parseSingleLetterGender("x"));
-        assertEquals(Gender.Undetermined,
+        assertEquals(Gender.NonBinary,
                 ParseHelper.parseSingleLetterGender("t"));
-        assertEquals(Gender.Undetermined,
+        assertEquals(Gender.NonBinary,
                 ParseHelper.parseSingleLetterGender("56t"));
 
     }

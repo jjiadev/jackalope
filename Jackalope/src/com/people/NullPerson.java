@@ -29,7 +29,7 @@ public class NullPerson implements PersonInterface {
 
 	@Override
 	public Gender getGender() {
-		return Gender.Undetermined;
+		return Gender.NonBinary;
 	}
 
 	@Override

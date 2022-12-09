@@ -2,7 +2,6 @@ package com.people;
 
 import java.util.GregorianCalendar;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 
 import static junit.framework.TestCase.*;
@@ -37,10 +36,10 @@ public class PersonFormatterTest {
 
 	public void testFormatPerson_Undetermined() throws Exception {
 		Person person = new Person("Thickneck", "Blast",
-				"MiddleInitialDoesntMatter", Gender.Undetermined, "Blue",
+				"MiddleInitialDoesntMatter", Gender.NonBinary, "Blue",
 				new GregorianCalendar(1992, 5, 7));
 		PersonFormatter personFormatter = new PersonFormatter();
-		String expectedFormattedPerson = "Thickneck Blast Undetermined 6/7/1992 Blue";
+		String expectedFormattedPerson = "Thickneck Blast NonBinary 6/7/1992 Blue";
 		assertEquals(expectedFormattedPerson,
 				personFormatter.getFormattedPersonString(person));
 

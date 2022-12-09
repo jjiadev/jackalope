@@ -2,8 +2,6 @@ package com.parsing;
 
 import java.util.GregorianCalendar;
 
-import junit.framework.TestCase;
-
 import com.people.Gender;
 import com.people.NullPerson;
 import com.people.Person;
@@ -89,7 +87,7 @@ public class CommaParserTest {
 		assertEquals("Hardcheese", person.getLastName());
 		assertEquals("Blast", person.getFirstName());
 		assertEquals("", person.getMiddleInitial());
-		assertEquals(Gender.Undetermined, person.getGender());
+		assertEquals(Gender.NonBinary, person.getGender());
 		assertEquals("Red", person.getFavoriteColor());
 		int novemberInJava = 10;
 		GregorianCalendar expectedDateOfBirth = new GregorianCalendar(2012,

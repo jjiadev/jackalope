@@ -3,10 +3,7 @@ package com.people;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.parsing.CommaParser;
-import com.parsing.PeopleLoaderInterface;
-import com.parsing.PipeParser;
-import com.parsing.SpaceParser;
+import com.parsing.*;
 
 public class PersonCompiler implements PersonCompilerInterface {
 
@@ -29,6 +26,8 @@ public class PersonCompiler implements PersonCompilerInterface {
 				new PipeParser()));
 		allPeople.addAll(peopleLoader.loadPeople(path + "/comma.txt",
 				new CommaParser()));
+		allPeople.addAll(peopleLoader.loadPeople(path + "/tricky_pipe.txt",
+				new TrickyPipeParser()));
 		return allPeople;
 
 	}

@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import com.utilities.TestHelper;
 
-import junit.framework.TestCase;
 import static junit.framework.TestCase.*;
 
 public class NullPersonTest {
@@ -24,7 +23,7 @@ public class NullPersonTest {
 		assertEquals("", NullPerson.NULL.getFirstName());
 		assertEquals("", NullPerson.NULL.getMiddleInitial());
 		assertEquals("", NullPerson.NULL.getFavoriteColor());
-		assertEquals(Gender.Undetermined, NullPerson.NULL.getGender());
+		assertEquals(Gender.NonBinary, NullPerson.NULL.getGender());
 		GregorianCalendar expectedBirthdate = new GregorianCalendar();
 		expectedBirthdate.setTimeInMillis(0);
 		assertSame(NullPerson.NULL.getDateOfBirth(),

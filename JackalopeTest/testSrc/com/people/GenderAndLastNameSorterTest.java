@@ -2,7 +2,6 @@ package com.people;
 
 import java.util.ArrayList;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 import static junit.framework.TestCase.*;
 
@@ -16,7 +15,7 @@ public class GenderAndLastNameSorterTest {
 		MockPerson person2 = new MockPerson("Sartre", Gender.Male);
 		MockPerson person3 = new MockPerson("de Beauvoir", Gender.Female);
 		MockPerson person4 = new MockPerson("Zegzebski", Gender.Female);
-		MockPerson person5 = new MockPerson("Diogenes", Gender.Undetermined);
+		MockPerson person5 = new MockPerson("Diogenes", Gender.NonBinary);
 
 		people.add(person1);
 		people.add(person2);

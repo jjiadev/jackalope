@@ -1,5 +1,5 @@
 package com.people;
 
 public enum Gender {
-	Female,Male,  Undetermined
+	Female,Male, NonBinary
 }

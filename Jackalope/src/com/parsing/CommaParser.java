@@ -9,7 +9,6 @@ import com.people.Person;
 import com.people.PersonInterface;
 
 public class CommaParser implements PersonParser {
-
 	@Override
 	public PersonInterface parsePerson(String input) {
 		String[] split = input.split(",");
@@ -40,7 +39,7 @@ public class CommaParser implements PersonParser {
 		if (genderString.equals("female")) {
 			return Gender.Female;
 		}
-		return Gender.Undetermined;
+		return Gender.NonBinary;
 	}
 
 }

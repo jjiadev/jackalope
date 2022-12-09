@@ -16,7 +16,7 @@ public class MockPerson implements PersonInterface {
 	public MockPerson() {
 		dateOfBirth = new GregorianCalendar();
 		lastName = "";
-		gender = Gender.Undetermined;
+		gender = Gender.NonBinary;
 	}
 
 	public MockPerson(String lastName) {

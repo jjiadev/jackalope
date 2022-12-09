@@ -17,7 +17,7 @@ public class ParseHelper {
 		if (genderString.toUpperCase().equals("F")) {
 			return Gender.Female;
 		}
-		return Gender.Undetermined;
+		return Gender.NonBinary;
 	}
 
 	public static GregorianCalendar parseDate(String dateString,

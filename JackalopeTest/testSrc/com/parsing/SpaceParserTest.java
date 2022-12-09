@@ -8,7 +8,6 @@ import com.people.Person;
 import com.people.PersonInterface;
 import com.utilities.TestHelper;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 import static junit.framework.TestCase.*;
 
@@ -95,7 +94,7 @@ public class SpaceParserTest {
 		assertEquals("PunchBeef", person.getLastName());
 		assertEquals("Beat", person.getFirstName());
 		assertEquals("D", person.getMiddleInitial());
-		assertEquals(Gender.Undetermined, person.getGender());
+		assertEquals(Gender.NonBinary, person.getGender());
 		assertEquals("Red", person.getFavoriteColor());
 		int augustInJava = 7;
 		GregorianCalendar expectedDateOfBirth = new GregorianCalendar(1242,

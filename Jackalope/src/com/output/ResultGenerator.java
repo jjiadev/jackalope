@@ -18,51 +18,51 @@ import com.people.PersonFormatter;
 import com.people.PersonInterface;
 
 public class ResultGenerator {
-	public static void main(String[] args) {
-		ResultGenerator resultGenerator = new ResultGenerator(
-				new OutputGenerator(new PersonFormatter()), new FileWriter(),
-				new PersonCompiler(new PersonLoader(new FileReader())));
-		String outputPath = args[0];
-		String inputFolderPath = args[1];
-		System.out.println(new File(inputFolderPath).getAbsolutePath());
-		resultGenerator.writeOutput(outputPath, inputFolderPath);
-	}
+    public static void main(String[] args) {
+        ResultGenerator resultGenerator = new ResultGenerator(
+                new OutputGenerator(new PersonFormatter()), new FileWriter(),
+                new PersonCompiler(new PersonLoader(new FileReader()), null));
+        String outputPath = args[0];
+        String inputFolderPath = args[1];
+        System.out.println(new File(inputFolderPath).getAbsolutePath());
+        resultGenerator.writeOutput(outputPath, inputFolderPath);
+    }
 
-	private OutputGeneratorInterface outputGenerator;
-	private FileWriterInterface fileWriter;
-	private PersonCompilerInterface personCompiler;
+    private OutputGeneratorInterface outputGenerator;
+    private FileWriterInterface fileWriter;
+    private PersonCompilerInterface personCompiler;
 
-	public ResultGenerator(OutputGeneratorInterface outputGenerator,
-			FileWriterInterface fileWriter,
-			PersonCompilerInterface personCompiler) {
-		this.outputGenerator = outputGenerator;
-		this.fileWriter = fileWriter;
-		this.personCompiler = personCompiler;
-	}
+    public ResultGenerator(OutputGeneratorInterface outputGenerator,
+                           FileWriterInterface fileWriter,
+                           PersonCompilerInterface personCompiler) {
+        this.outputGenerator = outputGenerator;
+        this.fileWriter = fileWriter;
+        this.personCompiler = personCompiler;
+    }
 
-	public PersonCompilerInterface getPersonCompiler() {
-		return personCompiler;
-	}
+    public PersonCompilerInterface getPersonCompiler() {
+        return personCompiler;
+    }
 
-	public FileWriterInterface getFileWriter() {
-		return fileWriter;
-	}
+    public FileWriterInterface getFileWriter() {
+        return fileWriter;
+    }
 
-	public OutputGeneratorInterface getOutputGenerator() {
-		return outputGenerator;
-	}
+    public OutputGeneratorInterface getOutputGenerator() {
+        return outputGenerator;
+    }
 
-	public void writeOutput(String outputPath, String inputFolderPath) {
-		List<PersonInterface> allPeople = personCompiler
-				.getAllPeople(inputFolderPath);
-		String output1 = outputGenerator.createOutput(1, allPeople,
-				new GenderAndLastNameSorter());
-		String output2 = outputGenerator.createOutput(2, allPeople,
-				new BirthdateSorter());
-		String output3 = outputGenerator.createOutput(3, allPeople,
-				new LastNameSorter());
-		this.fileWriter.write(outputPath, output1 + output2 + output3);
+    public void writeOutput(String outputPath, String inputFolderPath) {
+        List<PersonInterface> allPeople = personCompiler
+                .getAllPeople(inputFolderPath);
+        String output1 = outputGenerator.createOutput(1, allPeople,
+                new GenderAndLastNameSorter());
+        String output2 = outputGenerator.createOutput(2, allPeople,
+                new BirthdateSorter());
+        String output3 = outputGenerator.createOutput(3, allPeople,
+                new LastNameSorter());
+        this.fileWriter.write(outputPath, output1 + output2 + output3);
 
-	}
+    }
 
 }

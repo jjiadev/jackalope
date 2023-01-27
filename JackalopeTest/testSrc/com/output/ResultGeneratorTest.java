@@ -10,14 +10,7 @@ import com.io.FileWriter;
 import com.io.MockFileWriter;
 import com.output.MockOutputGenerator.OutputGeneratorArgs;
 import com.parsing.PersonLoader;
-import com.people.BirthdateSorter;
-import com.people.GenderAndLastNameSorter;
-import com.people.LastNameSorter;
-import com.people.MockPersonCompiler;
-import com.people.OutputGenerator;
-import com.people.PersonCompiler;
-import com.people.PersonFormatter;
-import com.people.PersonInterface;
+import com.people.*;
 import com.utilities.TestHelper;
 
 import org.junit.Test;
@@ -100,7 +93,7 @@ public class ResultGeneratorTest {
 	public void testIntegrationTest() throws Exception {
 		ResultGenerator resultGenerator = new ResultGenerator(
 				new OutputGenerator(new PersonFormatter()), new FileWriter(),
-				new PersonCompiler(new PersonLoader(new FileReader())));
+				new PersonCompiler(new PersonLoader(new FileReader()), new PersonParseMapper(new FileReader())));
 
 		String path = "here.txt";
 		resultGenerator.writeOutput(path, "./Jackalope/resources/input_files");
